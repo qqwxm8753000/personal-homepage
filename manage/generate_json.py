@@ -2,8 +2,8 @@ import os
 import json
 from typing import List, Dict
 from codecs import open
-file_path = "../files"  # 文件搜索路径
-json_path = "./files.json"  # json路径
+file_path = "/opt/buildhome/repo/files"  # 文件搜索路径
+json_path = "/opt/buildhome/repo/manage/files.json"  # json路径
 
 data: List[dict] = []
 
