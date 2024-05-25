@@ -2,21 +2,47 @@ import os
 import json
 from typing import List, Dict
 from codecs import open
-file_path = "/opt/buildhome/repo/files"  # 文件搜索路径
-json_path = "/opt/buildhome/repo/manage/files.json"  # json路径
-
+search_file_path = "./files"  # 文件搜索路径
+file_path = "./manage/files.json"  # json路径
+friend_json = "./manage/friend.json"
 data: List[dict] = []
+
+friend_link: List[dict] = [
+    {
+        "name": "Exminecraft158的个人主页",
+        "link": ["https://ex.rth10.com/me/", "https://exec.mysxl.cn/", "https://ex-my-blog.mysxl.cn/", "https://exside6.netlify.app/"]
+    },
+]
 
 
 def search_file():
     global data
-    for i in os.listdir(file_path):
+    for i in os.listdir(search_file_path):
         data.append({"name": i, "link": f"/files/{i}"})
 
-def save_json():
-    with open(json_path,"w",encoding="utf-8") as f:
+
+def search_link():
+    global data
+    for each in friend_link:
+        data.append({
+            "name": each["name"],
+            "link": each["link"],
+        })
+
+
+def save_friend():
+    with open(friend_json, "w", encoding="utf-8") as f:
         f.write(json.dumps(data))
+
+
+def save_files():
+    with open(file_path, "w", encoding="utf-8") as f:
+        f.write(json.dumps(data))
+
 
 if __name__ == "__main__":
     search_file()
-    save_json()
+    save_files()
+    data = []
+    search_link()
+    save_friend()
