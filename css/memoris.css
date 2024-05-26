@@ -28,6 +28,12 @@ p {
     object-fit: contain; /* 图片适应容器并保持比例 */
     transform: scale(1.5) translateX(20%); /* 放大图片并向右移动 20% */
 }
+.container video {
+    width: 100%; /* 图片宽度填充整个母元素 */
+    height: auto; /* 根据宽度自动调整高度，以保持比例 */
+    object-fit: contain; /* 图片适应容器并保持比例 */
+    transform: scale(1.5) translateX(20%); /* 放大图片并向右移动 20% */
+}
 .topnav {
     display: flex;
     justify-content: center;
