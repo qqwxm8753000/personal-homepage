@@ -2,7 +2,6 @@ import os
 import json
 from typing import List, Dict
 from codecs import open
-import requests
 import zipfile
 
 
