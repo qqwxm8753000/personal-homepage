@@ -31,6 +31,9 @@ def search_link() -> None:
             "name": each["name"],
             "link": each["link"],
         })
+def save_files():
+    with open(file_path, "w", encoding="utf-8") as f:
+        f.write(json.dumps(data))
 
 
 def save_friend() ->None:
