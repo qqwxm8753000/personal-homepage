@@ -46,7 +46,7 @@ def save_files():
 def download_files(links:List[str]) ->None:
     for item in links:
         r = requests.get(item)
-        with open(f"./files/{item.split("/")[-1]}","wb") as f:
+        with open("./files/" + item.split("/")[-1], "wb") as f:
             f.write(r.content)
 
 def unzip_files(file :str,folder :str) -> None:
