@@ -39,25 +39,6 @@ def save_friend() ->None:
         f.write(json.dumps(data))
 
 
-def save_files():
-    with open(file_path, "w", encoding="utf-8") as f:
-        f.write(json.dumps(data))
-
-def download_files(links:List[str]) ->None:
-    for item in links:
-        r = requests.get(item)
-        with open("./files/" + item.split("/")[-1], "wb") as f:
-            f.write(r.content)
-
-def unzip_files(file :str,folder :str) -> None:
-    with zipfile.ZipFile(file,'r') as zip_ref:
-        zip_ref.extractall(folder)
-
-download_files([
-    "https://gitee.com/harvey520/top.yaozuopan/raw/master/web/iplist.txt.zip"
-])
-unzip_files("./files/iplist.txt.zip","./files")
-
 if __name__ == "__main__":
     search_file()
     save_files()
