@@ -2,20 +2,143 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MC_no_circle的个人网站</title>
-    <script src="/js/index.js"></script>
-    <link rel="stylesheet" href="/css/button.css">
+    <title>回忆录</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .topnav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%; /* 保证宽度与顶栏相同 */
+            margin: 0 auto; /* 居中显示 */
+            text-align: center; /* 文本居中 */
+        }
+        
+        .topnav a {
+            display: inline-block; /* 替代 float: left; */
+            color: yellow;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .topnav a:hover {
+            background-color: #ddd;
+            color: #007bff;
+        }
+        
+        .topnav a.active {
+            background-color: #007bff;
+            color: white;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            transition: gap 0.3s ease;
+        }
+
+        .image-item {
+            flex: 1 1 300px;
+            max-width: 300px;
+            height: 300px; /* 固定高度，保持长宽一致 */
+            transition: flex 0.3s ease, transform 0.3s ease;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative; /* 添加相对定位 */
+        }
+
+        .image {
+            max-width: 100%;
+            height: 100%; /* 图片充满容器 */
+            object-fit: cover; /* 保持比例填充 */
+            border-radius: 8px 8px 0 0; /* 图片上圆角 */
+        }
+
+        .image-text {
+            padding: 10px;
+            text-align: center; /* 居中对齐 */
+            background-color: rgba(0, 0, 0, 0.5); /* 半透明黑色背景 */
+            color: #fff; /* 白色文字 */
+            position: absolute; /* 绝对定位 */
+            bottom: 0; /* 底部对齐 */
+            left: 0;
+            right: 0;
+        }
+
+        .image-text p {
+            margin: 0;
+            font-size: 16px; /* 文字大小 */
+        }
+
+        .image-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* 视频样式调整 */
+        .image-item video {
+            width: 100%;
+            height: 100%; /* 视频充满容器 */
+            border-radius: 8px 8px 0 0; /* 视频上圆角 */
+            object-fit: cover; /* 保持视频比例并填充容器 */
+        }
+    </style>
 </head>
 <body>
-    <div class="center">
-        <img src="/img/BaoJiaheHongbao.jpg" alt="包佳禾照片">
-        <img src="/img/BaoJiaheZhanDui.jpg" alt="包佳禾照片">
-        <video src="/img/KaiXueKuaiShan.mp4"></video>
-        <img src="/img/FangXueZhanDui.jpg" alt="放学站队">
-        <img src="/img/SunFanghaoHongbao.jpg" alt="孙芳华照片">
-        <div class="center"><button><a href="/memoirs/index.html">返回主页</a></button></div>
+    <div class="topnav">
+        <a href="/memoirs/index.html">首页</a>
+        <a href="/memoirs/zengyan.html" >毕业赠言</a>
+        <a href="/memoirs/introduce.html">个人简介</a>
+        <a href="/memoirs/huiyi.html" class="active">回忆</a>
+    </div>
+    </div>
+    <div class="container">
+        <div class="gallery">
+            <div class="image-item">
+                <img class="image" src="/img/FangXueZhanDui.jpg" alt="放学站队">
+                <div class="image-text">
+                    <p>放学战队</p>
+                </div>
+            </div>
+            <div class="image-item">
+                <img class="image" src="/img/SunFanghaoHongbao.jpg" alt="孙芳昊">
+                <div class="image-text">
+                    <p>孙芳昊</p>
+                </div>
+            </div>
+            <div class="image-item">
+                <a href="/img/KaiXueKuaiShan.mp4">
+                    <video controls>
+                        <source src="/img/KaiXueKuaiShan.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="image-text">
+                        <p>开学快闪</p>
+                    </div>
+                </a>
+            </div>
+            <!-- 可以继续添加更多的 .image-item -->
+        </div>
     </div>
 </body>
 </html>
