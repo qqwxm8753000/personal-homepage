@@ -9,6 +9,8 @@ search_file_path = "./files"  # 文件搜索路径
 file_path = "./manage/files.json"  # json路径
 friend_json = "./manage/friend.json"
 data: List[dict] = []
+tools_json = "./manage/tools.json"
+search_tool_path = "./tools"
 
 friend_link: List[dict] = [
     {
@@ -41,9 +43,11 @@ def save_friend() ->None:
         f.write(json.dumps(data))
 
 
+
 if __name__ == "__main__":
     search_file()
     save_files()
     data = []
     search_link()
     save_friend()
+    data = []

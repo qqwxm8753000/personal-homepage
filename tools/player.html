@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+  <title>视频播放器</title>
+  <link rel="stylesheet" href="https://g.alicdn.com/apsara-media-box/imp-web-player/2.25.1/skins/default/aliplayer-min.css" />
+  <script type="text/javascript" charset="utf-8" src="https://g.alicdn.com/apsara-media-box/imp-web-player/2.25.1/aliplayer-min.js"></script>
+</head>
+<body>
+  <input type="file" id="fileInput" accept="video/mp4" />
+  <div class="prism-player" id="player-con"></div>
+  
+  <script>
+    // Initialize the player
+    var player = null;
+
+    function initializePlayer(videoSrc) {
+      if (player) {
+        player.dispose(); // Dispose previous instance if exists
+      }
+
+      player = new Aliplayer({
+        "id": "player-con",
+        "source": videoSrc,
+        "width": "100%",
+        "height": "500px",
+        "autoplay": false,
+        "isLive": false,
+        "rePlay": false,
+        "playsinline": true,
+        "isVBR": true,
+        "preload": true,
+        "controlBarVisibility": "hover",
+        "useH5Prism": true,
+        "extraInfo": {
+          "crossOrigin": "anonymous"
+        },
+        "skinLayout": [
+          {
+            "name": "H5Loading",
+            "align": "cc"
+          },
+          {
+            "name": "errorDisplay",
+            "align": "tlabs",
+            "x": 0,
+            "y": 0
+          },
+          {
+            "name": "infoDisplay"
+          },
+          {
+            "name": "tooltip",
+            "align": "blabs",
+            "x": 0,
+            "y": 56
+          },
+          {
+            "name": "controlBar",
+            "align": "blabs",
+            "x": 0,
+            "y": 0,
+            "children": [
+              {
+                "name": "progress",
+                "align": "blabs",
+                "x": 0,
+                "y": 44
+              },
+              {
+                "name": "playButton",
+                "align": "tl",
+                "x": 15,
+                "y": 12
+              },
+              {
+                "name": "timeDisplay",
+                "align": "tl",
+                "x": 10,
+                "y": 7
+              },
+              {
+                "name": "fullScreenButton",
+                "align": "tr",
+                "x": 10,
+                "y": 12
+              },
+              {
+                "name": "volume",
+                "align": "tr",
+                "x": 5,
+                "y": 10
+              },
+              {
+                "name": "snapshot",
+                "align": "tr",
+                "x": 10,
+                "y": 12
+              }
+            ]
+          }
+        ]
+      }, function (player) {
+        console.log("The player is created");
+      });
+
+      // Handle snapshot
+      player.on('snapshoted', function (data) {
+        var pictureData = data.paramData.base64;
+        var downloadElement = document.createElement('a');
+        downloadElement.setAttribute('href', pictureData);
+        var fileName = 'Aliplayer' + Date.now() + '.png';
+        downloadElement.setAttribute('download', fileName);
+        downloadElement.click();
+        pictureData = null;
+      });
+    }
+
+    document.getElementById('fileInput').addEventListener('change', function (event) {
+      var file = event.target.files[0];
+      if (file && file.type === 'video/mp4') {
+        var videoSrc = URL.createObjectURL(file);
+        initializePlayer(videoSrc);
+      } else {
+        alert('请选择mp4文件');
+      }
+    });
+  </script>
+</body>
+</html>
