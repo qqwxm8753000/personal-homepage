@@ -59,6 +59,10 @@ img {
     width: 100px;
 }
 
+.red {
+    color:red;
+}
+
 .link {
     color: #6a1b9a;
 }
