@@ -63,8 +63,8 @@ img {
     color:rgb(244, 7, 0);
 }
 
-.link {
-    color: #6a1b9a;
+.link a{
+    color: #fd0000;
 }
 @keyframes expand {
     0% {
