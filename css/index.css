@@ -38,7 +38,9 @@
     color: white; /* 激活状态文字颜色 */
 }
 
-
+.friend-list li a {
+    color:rgb(244, 7, 0);
+}
 
 
 
