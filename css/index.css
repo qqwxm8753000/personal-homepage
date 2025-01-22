@@ -60,7 +60,7 @@ img {
 }
 
 .red {
-    color:red;
+    color:rgb(244, 7, 0);
 }
 
 .link {
@@ -82,5 +82,5 @@ img {
 }
 
 body{
-    background-color: red;
+    background-color: rgb(149, 223, 216);
 }
