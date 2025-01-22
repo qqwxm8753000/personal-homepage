@@ -80,3 +80,7 @@ img {
         transform: scale(1.2);
     }
 }
+
+body{
+    background-color: red;
+}
