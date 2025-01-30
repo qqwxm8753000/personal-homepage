@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: http://mc-no-circle.pages.dev/sitemap.xml
