@@ -1,1 +1,10 @@
-[{"name": "播放器", "link": "/tools/player.html"}]
+[
+    {
+        "name": "播放器",
+        "link": "/tools/player.html"
+    },
+    {
+        "name": "aes加解密工具",
+        "link": "https://llamacoder.together.ai/share/v2/1NUrii2JKxqQRj7T"
+    }
+]
