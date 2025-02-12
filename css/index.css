@@ -4,11 +4,12 @@
     margin: auto;
     max-width: 100%;
 }
-
+.btn {
+    @apply rounded-full;
+  }
 .一言 {
     font-size: 20px;
 }
-
 .topnav {
     background-color: #f2f2f2; /* 背景颜色 */
     overflow: hidden;
