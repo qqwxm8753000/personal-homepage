@@ -15,8 +15,8 @@ body {
 }
 
 #nav {
-    position: absolute; /* 使导航栏相对于其父容器进行定位 */
-    top: 10; /* 距离页面顶部为 0 */
+    position: fixed; /* 将导航栏固定在顶部 */
+    top: 0; /* 距离页面顶部为 0 */
     left: 50%; /* 居中对齐 */
     transform: translateX(-50%); /* 完全居中 */
     border: none;
@@ -28,6 +28,7 @@ body {
     padding: 10px;
     z-index: 1000; /* 保证导航栏位于其他内容之上 */
 }
+
 
 #nav li a {
     position: relative;
