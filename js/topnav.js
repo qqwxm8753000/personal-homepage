@@ -1,20 +1,20 @@
 $(document).ready(function() {
     // 处理点击事件
-    $("#nav li a").on("click", function () {
+    $("#nav a").on("click", function () {
         var position = $(this).parent().position();
         var width = $(this).parent().width();
         $("#nav .slide1").css({ opacity: 1, left: position.left, width: width });
     });
 
     // 处理鼠标悬停事件
-    $("#nav li a").on("mouseover", function () {
+    $("#nav a").on("mouseover", function () {
         var position = $(this).parent().position();
         var width = $(this).parent().width();
         $("#nav .slide2").css({ opacity: 1, left: position.left, width: width }).addClass("squeeze");
     });
 
     // 处理鼠标离开事件
-    $("#nav li a").on("mouseout", function () {
+    $("#nav a").on("mouseout", function () {
         $("#nav .slide2").css({ opacity: 0 }).removeClass("squeeze");
     });
 
