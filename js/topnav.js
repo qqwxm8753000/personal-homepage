@@ -14,7 +14,7 @@ $(document).ready(function() {
     });
 
     // 处理鼠标离开事件
-    $("#nav a").on("mouseout", function () {
+    $("#nav li a").on("mouseout", function () {
         $("#nav .slide2").css({ opacity: 0 }).removeClass("squeeze");
     });
 
