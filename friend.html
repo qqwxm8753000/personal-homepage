@@ -8,9 +8,8 @@
     <title>MC_no_circle的个人网站</title>
     <link rel="stylesheet" href="/css/index.css">
     <script src="/js/index.js"></script>
-
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/js/topnav.js"></script>
+    <link rel="stylesheet" href="/css/topnav.css">
 
     <style>
         li a {
@@ -26,14 +25,15 @@
 </head>
 
 <body>
-    <div class="topnav">
-        <a class="btn btn-primary" href="/index.html">首页</a>
-        <a href="/about.html">关于</a>
-        <a href="/contact.html">联系方式</a>
-        <a href="/file.html">文件界面</a>
-        <a href="/friend.html" class="active">友情链接</a>
-        <a href="/tools/index.html">小工具</a>
-    </div>
+    <ul id="nav">
+        <li class="slide1"></li>
+        <li class="slide2"></li>
+        <li><a href="/index.html">首页</a></li>
+        <li><a href="/about.html">关于</a></li>
+        <li><a href="/contact.html">联系方式</a></li>
+        <li><a href="/file.html">文件界面</a></li>
+        <li><a href="/friend.html">友情链接</a></li>
+    </ul>
     </div>
     <div class="center">
         <li class="friend-list">

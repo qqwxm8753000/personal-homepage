@@ -4,40 +4,11 @@
     margin: auto;
     max-width: 100%;
 }
-.btn {
-    @apply rounded-full;
-  }
+
 .一言 {
     font-size: 20px;
 }
-.topnav {
-    background-color: #f2f2f2; /* 背景颜色 */
-    overflow: hidden;
-    display: flex;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加轻微阴影效果 */
-    align-items: center;
-    justify-content: center;
-}
 
-.topnav a {
-    float: left; /* 左浮动使得链接横向排列 */
-    display: block; /* 将链接变成块级元素，填充整个容器宽度 */
-    color: #333; /* 默认文字颜色 */
-    text-align: center; /* 文字居中显示 */
-    padding: 14px 16px; /* 上下左右内边距 */
-    text-decoration: none; /* 移除下划线 */
-    transition: background-color 0.3s; /* 添加背景颜色过渡效果 */
-}
-
-.topnav a:hover {
-    background-color: #ddd; /* 悬停时背景颜色 */
-    color: #007bff; /* 悬停时文字颜色 */
-}
-
-.topnav a.active {
-    background-color: #007bff; /* 激活状态背景颜色 */
-    color: white; /* 激活状态文字颜色 */
-}
 
 .friend-list li a {
     color:rgb(244, 7, 0);
